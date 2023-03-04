@@ -6,10 +6,17 @@ container.addEventListener("contextmenu", (e) => {
   e.preventDefault();
 });
 
+const audio = document.createElement("audio");
+audio.src = "assets/og-music.mp3";
+let audioPlaying = false;
 audioBtn.addEventListener("click", () => {
-  const audio = document.createElement("audio");
-  audio.src = "assets/og-music.mp3";
+  if (audioPlaying) {
+    audio.pause();
+    audioPlaying = false;
+    return;
+  }
   audio.play();
+  audioPlaying = true;
 });
 
 const arrowElement = document.createElement("img");
