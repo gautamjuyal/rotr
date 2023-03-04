@@ -1,11 +1,12 @@
 const container = document.querySelector(".container");
 const menuItems = document.querySelectorAll(".menu ul li");
+const audioBtn = document.querySelector(".audio-btn");
 
 container.addEventListener("contextmenu", (e) => {
   e.preventDefault();
 });
 
-window.addEventListener("load", () => {
+audioBtn.addEventListener("click", () => {
   const audio = document.createElement("audio");
   audio.src = "assets/og-music.mp3";
   audio.play();
